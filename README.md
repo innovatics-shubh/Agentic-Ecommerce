@@ -366,3 +366,6 @@ Docker
 No OpenAI, Anthropic, Gemini or Ollama. No PostgreSQL, MongoDB or any external
 database — the catalogue is static JSON behind a repository layer designed to be
 swapped.
+
+
+Built an agentic code review platform where an 8-stage multi-agent LangGraph pipeline profiles a repository (from a Git URL, local folder or ZIP), plans the review, audits files and cross-cutting issues, and produces a scored report that streams live to a React dashboard over SSE. To cut AI false positives, a critic agent and a proof engine check every high-severity finding, either by tracing it in code or by running it in a locked-down Docker sandbox; a rotating API-key pool, a per-key rate limiter and two-tier model routing let it run within free-tier LLM limits, and the system ships with 160+ automated tests.
